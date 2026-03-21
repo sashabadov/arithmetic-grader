@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arithmetic Worksheet Grader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Worksheet Grader</h1>
+    <p class="subtitle">Upload a student worksheet PDF and receive an annotated graded copy.</p>
+
+    <div id="drop-worksheet" class="drop-zone" role="button" tabindex="0"
+         aria-label="Upload worksheet PDF">
+      <p class="drop-label">Drag &amp; drop <strong>worksheet PDF</strong> here<br>or click to select</p>
+      <p id="ws-filename" class="filename"></p>
+      <input type="file" id="input-worksheet" accept=".pdf" hidden>
+    </div>
+
+    <div id="drop-answerkey" class="drop-zone optional" role="button" tabindex="0"
+         aria-label="Upload answer key PDF (optional)">
+      <p class="drop-label"><strong>Answer key PDF</strong> (optional)</p>
+      <p id="ak-filename" class="filename"></p>
+      <input type="file" id="input-answerkey" accept=".pdf" hidden>
+    </div>
+
+    <div class="cols-row">
+      <label for="input-cols">Column override:</label>
+      <input type="number" id="input-cols" min="1" max="20" placeholder="auto-detect">
+    </div>
+
+    <button id="btn-grade" disabled>Grade</button>
+
+    <div id="status" hidden>
+      <div class="spinner"></div>
+      <p id="status-msg">Grading…</p>
+    </div>
+
+    <div id="error-box" hidden></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

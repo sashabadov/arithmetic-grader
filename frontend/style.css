@@ -1,0 +1,177 @@
+:root {
+  --color-border: #ccc;
+  --color-accent: #2563eb;
+  --color-accent-light: #eff6ff;
+  --color-success: #16a34a;
+  --color-error: #dc2626;
+  --color-error-light: #fef2f2;
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
+  --color-bg: #f9fafb;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* Drop zones */
+.drop-zone {
+  border: 2px dashed var(--color-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  user-select: none;
+}
+
+.drop-zone:hover,
+.drop-zone:focus-visible {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.drop-zone.drag-over {
+  border-color: var(--color-accent);
+  background: var(--color-accent-light);
+}
+
+.drop-zone.has-file {
+  border-style: solid;
+  border-color: var(--color-success);
+  background: #f0fdf4;
+}
+
+.drop-zone.optional {
+  border-color: #e5e7eb;
+}
+
+.drop-zone.optional .drop-label {
+  color: var(--color-muted);
+}
+
+.drop-label {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.filename {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-success);
+  word-break: break-all;
+}
+
+/* Cols input */
+.cols-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cols-row label {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.cols-row input[type="number"] {
+  width: 6rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  background: #fff;
+}
+
+/* Grade button */
+#btn-grade {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+  align-self: flex-start;
+}
+
+#btn-grade:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+#btn-grade:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Status */
+#status {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 3px solid #e5e7eb;
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#status-msg {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Error box */
+#error-box {
+  padding: 0.85rem 1rem;
+  background: var(--color-error-light);
+  border: 1px solid #fca5a5;
+  border-radius: 0.5rem;
+  color: var(--color-error);
+  font-size: 0.9rem;
+}

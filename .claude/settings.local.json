@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/sashabadov/arithmetic-grader/backend /Users/sashabadov/arithmetic-grader/frontend)",
+      "Bash(cp /Users/sashabadov/arithmetic-grader/grade_worksheet.py /Users/sashabadov/arithmetic-grader/backend/grade_worksheet.py)",
+      "Bash(gh auth:*)",
+      "Bash(brew install:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ]
+  }
+}

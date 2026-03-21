@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pypdfium2
+Pillow
+img2pdf
+pytesseract
+numpy
