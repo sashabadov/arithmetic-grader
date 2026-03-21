@@ -1,5 +1,5 @@
 // Fill in after deploying backend to Render:
-const BACKEND_URL = "https://<your-render-app>.onrender.com/grade";
+const BACKEND_URL = "https://arithmetic-grader.onrender.com/grade";
 
 const COLD_START_MS = 5000;
 const COLD_START_MSG = "First request may take ~30 seconds while the server wakes up\u2026";
